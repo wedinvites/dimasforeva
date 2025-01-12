@@ -1791,7 +1791,7 @@
   > .elementor-motion-effects-container
   > .elementor-motion-effects-layer {
   background-color: #faf9f6;
-  background-image: url("https://i0.wp.com/wed-webs.com/wp-content/uploads/2024/03/Desain-Costum_Emily_v2_Pattern_1.jpg?fit=1080%2C1920&ssl=1");
+  background-image: url("./background-pattern-1.webp");
   background-position: center center;
   background-size: cover;
 }
@@ -3218,7 +3218,7 @@ body.elementor-page-273883
     .elementor-element.elementor-element-6b8df448
     > .elementor-motion-effects-container
     > .elementor-motion-effects-layer {
-    background-image: url("https://i0.wp.com/wed-webs.com/wp-content/uploads/2024/03/Desain-Costum_Emily_v2_Pattern_3.jpg?fit=1080%2C1920&ssl=1");
+    background-image: url("./background-pattern-3.webp");
     background-position: center center;
     background-size: contain;
   }
