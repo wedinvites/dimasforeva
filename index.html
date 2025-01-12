@@ -853,7 +853,10 @@
                 data-widget_type="heading.default"
               >
                 <div class="elementor-widget-container">
-                  <h2 class="elementor-heading-title elementor-size-default">
+                  <h2
+                    class="elementor-heading-title elementor-size-default"
+                    id="guest-name"
+                  >
                     Family and Friends
                   </h2>
                 </div>
@@ -1817,10 +1820,11 @@
                 <iframe
                   src="https://docs.google.com/forms/d/e/1FAIpQLSe5m-SBo-W0rc9jq07aNhbRCVztGlhiOV-EJza7QWU0U8nnSw/viewform?embedded=true"
                   width="640"
-                  height="1143"
+                  height="860"
                   frameborder="0"
                   marginheight="0"
                   marginwidth="0"
+                  id="rsvp-form"
                   >Loading…</iframe
                 >
               </div>
@@ -2355,6 +2359,28 @@
       </div>
     </div>
 
+    <script>
+      // Get URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const guest = urlParams.get("to");
+      const isFamily = urlParams.get("family") === "true";
+
+      // Get the RSVP form
+      const rsvpForm = document.getElementById("rsvp-form");
+
+      let rsvpFormSource = isFamily
+        ? "https://docs.google.com/forms/d/e/1FAIpQLSfbTf6e69He8JpAqYDCBH9fN3IpM6dLwXvhp1hIutYzp5squg/viewform?embedded=true"
+        : "https://docs.google.com/forms/d/e/1FAIpQLSe5m-SBo-W0rc9jq07aNhbRCVztGlhiOV-EJza7QWU0U8nnSw/viewform?embedded=true";
+
+      if (guest) {
+        rsvpFormSource += `&entry.593412260=${guest}`;
+        const guestNameElement = document.getElementById("guest-name");
+
+        guestNameElement.textContent = decodeURIComponent(guest);
+      }
+
+      rsvpForm.src = rsvpFormSource;
+    </script>
     <script type="text/javascript">
       const lazyloadRunObserver = () => {
         const lazyloadBackgrounds = document.querySelectorAll(
