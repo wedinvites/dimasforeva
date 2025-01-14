@@ -3886,16 +3886,14 @@ body.elementor-page-273883
     --border-bottom-width: 6px;
     --border-left-width: 6px;
     --border-radius: 300px 300px 300px 300px;
-    --padding-top: 38%;
-    --padding-bottom: 38%;
+    --padding-top: 10%;
+    --padding-bottom: 20%;
+    --margin-bottom: 12%;
     --padding-left: 8%;
     --padding-right: 8%;
   }
   .elementor-273883 .elementor-element.elementor-element-2c8b7d42 img {
     width: 60%;
-    position: relative;
-    transform: translateY(200px);
-    z-index: 10000;
   }
   .elementor-273883 .elementor-element.elementor-element-55b39c24 {
     --spacer-size: 171px;
