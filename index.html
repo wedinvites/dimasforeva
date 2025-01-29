@@ -2071,6 +2071,7 @@
             >
               <div class="elementor-widget-container">
                 <div
+                  id="gallery-container"
                   class="elementor-gallery__container e-gallery-container e-gallery-grid e-gallery--ltr e-gallery--lazyload"
                   style="
                     --hgap: 0px;
@@ -2082,82 +2083,6 @@
                     --container-aspect-ratio: 177.77777777777777%;
                   "
                 >
-                  <a
-                    class="e-gallery-item elementor-gallery-item elementor-animated-content"
-                    href="./assets/IMG_Gallery1.jpeg"
-                    data-elementor-open-lightbox="yes"
-                    data-elementor-lightbox-slideshow="2ec9232e"
-                    data-elementor-lightbox-title="IMG_Gallery1"
-                    data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU5OTYyLCJ1cmwiOiJodHRwczpcL1wvd2VkLXdlYnMuY29tXC93cC1jb250ZW50XC91cGxvYWRzXC8yMDIzXC8wMlwvV2lsc29uLUFzdHJpZC01NjRBMjE3Ni5qcGciLCJzbGlkZXNob3ciOiIyZWM5MjMyZSJ9"
-                    style="--column: 0; --row: 0"
-                  >
-                    <div
-                      class="e-gallery-image elementor-gallery-item__image"
-                      data-thumbnail="./assets/IMG_Gallery1.jpeg"
-                      data-width="1667"
-                      data-height="2500"
-                      aria-label=""
-                      role="img"
-                    ></div>
-                    <div class="elementor-gallery-item__overlay"></div>
-                  </a>
-                  <a
-                    class="e-gallery-item elementor-gallery-item elementor-animated-content"
-                    href="./assets/IMG_Gallery2.jpeg"
-                    data-elementor-open-lightbox="yes"
-                    data-elementor-lightbox-slideshow="2ec9232e"
-                    data-elementor-lightbox-title="IMG_Gallery2"
-                    data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU5OTczLCJ1cmwiOiJodHRwczpcL1wvd2VkLXdlYnMuY29tXC93cC1jb250ZW50XC91cGxvYWRzXC8yMDIzXC8wMlwvV2lsc29uLUFzdHJpZC1EU0NGODI2OC5qcGciLCJzbGlkZXNob3ciOiIyZWM5MjMyZSJ9"
-                    style="--column: 1; --row: 0"
-                  >
-                    <div
-                      class="e-gallery-image elementor-gallery-item__image"
-                      data-thumbnail="./assets/IMG_Gallery2.jpeg"
-                      data-width="1667"
-                      data-height="2500"
-                      aria-label=""
-                      role="img"
-                    ></div>
-                    <div class="elementor-gallery-item__overlay"></div>
-                  </a>
-                  <a
-                    class="e-gallery-item elementor-gallery-item elementor-animated-content"
-                    href="./assets/IMG_Gallery3.jpeg"
-                    data-elementor-open-lightbox="yes"
-                    data-elementor-lightbox-slideshow="2ec9232e"
-                    data-elementor-lightbox-title="IMG_Gallery3"
-                    data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU5OTUxLCJ1cmwiOiJodHRwczpcL1wvd2VkLXdlYnMuY29tXC93cC1jb250ZW50XC91cGxvYWRzXC8yMDIzXC8wMlwvV2lsc29uLUFzdHJpZC01NjRBMTY1OC5qcGciLCJzbGlkZXNob3ciOiIyZWM5MjMyZSJ9"
-                    style="--column: 0; --row: 1"
-                  >
-                    <div
-                      class="e-gallery-image elementor-gallery-item__image"
-                      data-thumbnail="./assets/IMG_Gallery3.jpeg"
-                      data-width="1667"
-                      data-height="2500"
-                      aria-label=""
-                      role="img"
-                    ></div>
-                    <div class="elementor-gallery-item__overlay"></div>
-                  </a>
-                  <a
-                    class="e-gallery-item elementor-gallery-item elementor-animated-content"
-                    href="./assets/IMG_Gallery4.jpeg"
-                    data-elementor-open-lightbox="yes"
-                    data-elementor-lightbox-slideshow="2ec9232e"
-                    data-elementor-lightbox-title="IMG_Gallery4"
-                    data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTU5OTUwLCJ1cmwiOiJodHRwczpcL1wvd2VkLXdlYnMuY29tXC93cC1jb250ZW50XC91cGxvYWRzXC8yMDIzXC8wMlwvV2lsc29uLUFzdHJpZC01NjRBMTQ4MC5qcGciLCJzbGlkZXNob3ciOiIyZWM5MjMyZSJ9"
-                    style="--column: 1; --row: 1"
-                  >
-                    <div
-                      class="e-gallery-image elementor-gallery-item__image"
-                      data-thumbnail="./assets/IMG_Gallery4.jpeg"
-                      data-width="2500"
-                      data-height="1667"
-                      aria-label=""
-                      role="img"
-                    ></div>
-                    <div class="elementor-gallery-item__overlay"></div>
-                  </a>
                 </div>
               </div>
             </div>
@@ -2419,6 +2344,57 @@
         <div class="um-modal-photo"></div>
       </div>
     </div>
+
+    <script>
+        // Array of image data
+        const totalImages = 28;
+        const images = [];
+        for (let i = 1; i <= totalImages; i++) {
+            images.push({
+                src: `./assets/gallery-prewed/${i}.jpg`,
+                title: `gallery-${i}`,
+                row: Math.floor((i - 1) / 2),  // To alternate rows (0, 1, 2, etc.)
+                column: (i - 1) % 2  // To alternate columns (0, 1)
+            });
+        }
+
+        // Get the container element
+        const galleryContainer = document.getElementById('gallery-container');
+
+        // Loop through the image data
+        images.forEach((image, index) => {
+            // Create the <a> element
+            const a = document.createElement('a');
+            a.classList.add('e-gallery-item', 'elementor-gallery-item', 'elementor-animated-content');
+            a.href = image.src;
+            a.setAttribute('data-elementor-open-lightbox', 'yes');
+            a.setAttribute('data-elementor-lightbox-slideshow', '2ec9232e');
+            a.setAttribute('data-elementor-lightbox-title', image.title);
+            a.setAttribute('data-e-action-hash', '#');
+            a.style.setProperty('--column', image.column);
+            a.style.setProperty('--row', image.row);
+
+            // Create the image container <div>
+            const divImage = document.createElement('div');
+            divImage.classList.add('e-gallery-image', 'elementor-gallery-item__image');
+            divImage.setAttribute('data-thumbnail', image.src);
+            divImage.setAttribute('data-width', '1667');
+            divImage.setAttribute('data-height', '2500');
+            divImage.setAttribute('aria-label', '');
+            divImage.setAttribute('role', 'img');
+
+            // Create the overlay <div>
+            const divOverlay = document.createElement('div');
+            divOverlay.classList.add('elementor-gallery-item__overlay');
+
+            // Append the image and overlay to the anchor element
+            a.appendChild(divImage);
+            a.appendChild(divOverlay);
+
+            // Append the anchor element to the gallery container
+            galleryContainer.appendChild(a);
+        });
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
