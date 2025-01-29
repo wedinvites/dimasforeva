@@ -769,10 +769,21 @@
     </style>
 
     <style>
+      .bank-logo {
+        width: 80%;
+        padding-left: 15%;
+        padding-right: 15%;
+      }
       .e-con.e-parent:nth-of-type(n + 4):not(.e-lazyloaded):not(.e-no-lazyload),
       .e-con.e-parent:nth-of-type(n + 4):not(.e-lazyloaded):not(.e-no-lazyload)
         * {
         background-image: none !important;
+      }
+      @media screen and (max-width: 500px) {
+        .bank-logo {
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
       @media screen and (max-height: 1024px) {
         .e-con.e-parent:nth-of-type(n + 3):not(.e-lazyloaded):not(
@@ -1877,7 +1888,7 @@
                     decoding="async"
                     src="./assets/bca.png"
                     alt="Bank "
-                    style="width: 80%"
+                    class="bank-logo"
                   />
                   <span onclick="copyText(this)"
                     >5390450836
@@ -1899,7 +1910,7 @@
                     decoding="async"
                     src="./assets/bni.png"
                     alt="Bank "
-                    style="width: 80%"
+                    class="bank-logo"
                   />
                   <span onclick="copyText(this)"
                     >1239700913
