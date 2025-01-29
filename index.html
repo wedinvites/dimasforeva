@@ -769,6 +769,10 @@
     </style>
 
     <style>
+      .copy-btn {
+        padding: 5px 10px;
+        margin: 5px;
+      }
       .bank-logo {
         width: 80%;
         padding-left: 15%;
@@ -1890,18 +1894,15 @@
                     alt="Bank "
                     class="bank-logo"
                   />
-                  <span onclick="copyText(this)"
-                    >5390450836
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      src="./assets/copy.png"
-                      style="
-                        height: 13px;
-                        margin-top: -5px;
-                        cursor: pointer;
-                      " /></span
-                  ><br />
+                  <span id="account-number-1">5390450836</span>
+                  <button
+                    onclick="copyText('account-number-1', this)"
+                    onblur="resetCopyButton(this)"
+                    class="copy-btn"
+                  >
+                    Copy
+                  </button>
+                  <br />
                   A/N Katarina Evalita L <br />
                 </div>
                 <div class="col-6" style="font-size: 22px">
@@ -1912,18 +1913,15 @@
                     alt="Bank "
                     class="bank-logo"
                   />
-                  <span onclick="copyText(this)"
-                    >1239700913
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      src="./assets/copy.png"
-                      style="
-                        height: 13px;
-                        margin-top: -5px;
-                        cursor: pointer;
-                      " /></span
-                  ><br />
+                  <span id="account-number-2">1239700913</span>
+                  <button
+                    onclick="copyText('account-number-2', this)"
+                    onblur="resetCopyButton(this)"
+                    class="copy-btn"
+                  >
+                    Copy
+                  </button>
+                  <br />
                   A/N Dimas Daryanto Putra <br />
                 </div>
               </div>
@@ -2082,8 +2080,7 @@
                     --aspect-ratio: 177.77777777777777%;
                     --container-aspect-ratio: 177.77777777777777%;
                   "
-                >
-                </div>
+                ></div>
               </div>
             </div>
           </div>
@@ -2346,54 +2343,61 @@
     </div>
 
     <script>
-        // Array of image data
-        const totalImages = 28;
-        const images = [];
-        for (let i = 1; i <= totalImages; i++) {
-            images.push({
-                src: `./assets/gallery-prewed/${i}.jpg`,
-                title: `gallery-${i}`,
-                row: Math.floor((i - 1) / 2),  // To alternate rows (0, 1, 2, etc.)
-                column: (i - 1) % 2  // To alternate columns (0, 1)
-            });
-        }
-
-        // Get the container element
-        const galleryContainer = document.getElementById('gallery-container');
-
-        // Loop through the image data
-        images.forEach((image, index) => {
-            // Create the <a> element
-            const a = document.createElement('a');
-            a.classList.add('e-gallery-item', 'elementor-gallery-item', 'elementor-animated-content');
-            a.href = image.src;
-            a.setAttribute('data-elementor-open-lightbox', 'yes');
-            a.setAttribute('data-elementor-lightbox-slideshow', '2ec9232e');
-            a.setAttribute('data-elementor-lightbox-title', image.title);
-            a.setAttribute('data-e-action-hash', '#');
-            a.style.setProperty('--column', image.column);
-            a.style.setProperty('--row', image.row);
-
-            // Create the image container <div>
-            const divImage = document.createElement('div');
-            divImage.classList.add('e-gallery-image', 'elementor-gallery-item__image');
-            divImage.setAttribute('data-thumbnail', image.src);
-            divImage.setAttribute('data-width', '1667');
-            divImage.setAttribute('data-height', '2500');
-            divImage.setAttribute('aria-label', '');
-            divImage.setAttribute('role', 'img');
-
-            // Create the overlay <div>
-            const divOverlay = document.createElement('div');
-            divOverlay.classList.add('elementor-gallery-item__overlay');
-
-            // Append the image and overlay to the anchor element
-            a.appendChild(divImage);
-            a.appendChild(divOverlay);
-
-            // Append the anchor element to the gallery container
-            galleryContainer.appendChild(a);
+      // Array of image data
+      const totalImages = 28;
+      const images = [];
+      for (let i = 1; i <= totalImages; i++) {
+        images.push({
+          src: `./assets/gallery-prewed/${i}.jpg`,
+          title: `gallery-${i}`,
+          row: Math.floor((i - 1) / 2), // To alternate rows (0, 1, 2, etc.)
+          column: (i - 1) % 2, // To alternate columns (0, 1)
         });
+      }
+
+      // Get the container element
+      const galleryContainer = document.getElementById("gallery-container");
+
+      // Loop through the image data
+      images.forEach((image, index) => {
+        // Create the <a> element
+        const a = document.createElement("a");
+        a.classList.add(
+          "e-gallery-item",
+          "elementor-gallery-item",
+          "elementor-animated-content"
+        );
+        a.href = image.src;
+        a.setAttribute("data-elementor-open-lightbox", "yes");
+        a.setAttribute("data-elementor-lightbox-slideshow", "2ec9232e");
+        a.setAttribute("data-elementor-lightbox-title", image.title);
+        a.setAttribute("data-e-action-hash", "#");
+        a.style.setProperty("--column", image.column);
+        a.style.setProperty("--row", image.row);
+
+        // Create the image container <div>
+        const divImage = document.createElement("div");
+        divImage.classList.add(
+          "e-gallery-image",
+          "elementor-gallery-item__image"
+        );
+        divImage.setAttribute("data-thumbnail", image.src);
+        divImage.setAttribute("data-width", "1667");
+        divImage.setAttribute("data-height", "2500");
+        divImage.setAttribute("aria-label", "");
+        divImage.setAttribute("role", "img");
+
+        // Create the overlay <div>
+        const divOverlay = document.createElement("div");
+        divOverlay.classList.add("elementor-gallery-item__overlay");
+
+        // Append the image and overlay to the anchor element
+        a.appendChild(divImage);
+        a.appendChild(divOverlay);
+
+        // Append the anchor element to the gallery container
+        galleryContainer.appendChild(a);
+      });
     </script>
 
     <script
@@ -2412,8 +2416,9 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      function copyText(element) {
-        var range, selection, worked;
+      function copyText(elementId, button) {
+        const element = document.getElementById(elementId);
+        let range, selection;
 
         if (document.body.createTextRange) {
           range = document.body.createTextRange();
@@ -2429,10 +2434,14 @@
 
         try {
           document.execCommand("copy");
-          alert("Number copied");
+          button.innerHTML = "Copied";
         } catch (err) {
-          alert("Unable to copy number");
+          button.innerHTML = "Unable to copy";
         }
+      }
+
+      function resetCopyButton(button) {
+        button.innerHTML = "Copy";
       }
     </script>
     <script>
