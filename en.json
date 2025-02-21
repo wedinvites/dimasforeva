@@ -1,0 +1,39 @@
+{
+    "invitation": {
+        "opening": "By the grace of God, we are pleased to announce our wedding to you, our family, and our friends. We request the honor of your presence on our special day that will be held on:",
+        "holy_matrimony": {
+            "title": "Holy Matrimony",
+            "day": "Saturday",
+            "date": "August 9, 2025",
+            "time": "12:00 - 13:30 WIB",
+            "location": {
+                "name": "St. Bernadette<br />Catholic Church",
+                "address": "Jl. Boulevard Graha Raya No. Kavling 12, Sudimara Pinang, Tangerang, Banten"
+            }
+        },
+        "reception": {
+            "title": "Reception",
+            "day": "Saturday",
+            "date": "August 9, 2025",
+            "time": "14:00 - 16:00 WIB",
+            "location": {
+                "name": "St. Bernadette<br />Catholic Church Hall",
+                "address": "Jl. Boulevard Graha Raya No. Kavling 12, Sudimara Pinang, Tangerang, Banten"
+            }
+        }
+    },
+    "gift": {
+        "title": "Wedding Gift",
+        "opening": "Your presence is a present in itself. But if you do wish to give us something else, please kindly tap the button down below for further information:"
+    },
+    "rsvp": {
+        "title": "RSVP",
+        "opening": "Please fill out the attendance confirmation below:"
+    },
+    "groom": {
+        "description": "Second child of<br /> Mr. Alexander Ngadaryanto<br /> &amp;<br /> Mrs. Fransisca Maria Ajiarti"
+    },
+    "bride": {
+        "description": "Second child of<br /> Mr. Suken Eli (&#10013;)<br /> &amp;<br /> Mrs. Kumalawati Menik"
+    }
+}
